@@ -7,7 +7,11 @@ Page({
   data: {
 
   },
-
+  handlerUpload() {
+      wx.navigateTo({
+        url: '../upload/index',
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

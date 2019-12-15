@@ -1,4 +1,4 @@
 <!--pages/live/index.wxml-->
 <view>
-    <button>点击上传我的照片</button>
+    <button bindtap="handlerUpload">点击上传我的照片</button>
 </view>

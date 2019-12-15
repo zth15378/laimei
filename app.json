@@ -1,12 +1,12 @@
 {
   "pages": [
-      "pages/upload/index",
-      "pages/live/index",
     "pages/index/index",
     "pages/content/index",
     "pages/community/index",
     "pages/user/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/upload/index",
+    "pages/live/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
