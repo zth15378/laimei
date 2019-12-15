@@ -1,4 +1,4 @@
-// pages/content/index.js
+// pages/start/start.js
 Page({
 
   /**
@@ -11,15 +11,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function (options) {
 
-  onTabItemTap(item) {
-      // console.log(item)
-      // if(item.index==1){
-      //   wx.redirectTo({
-      //     url: '../live/index',
-      //   })
-      // }
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

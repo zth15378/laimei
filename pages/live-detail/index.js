@@ -1,4 +1,6 @@
 // pages/photo/photo.js
+import { requestServerData } from '../../utils/request.js'
+
 Page({
 
   /**
@@ -27,13 +29,40 @@ Page({
     showCanvas: false,
     saveImg: '',
     qjSrc: '../../public/images/endQj.png',
-    hzSrc: '../../public/images/bg.jpg'
+    hzSrc: '../../public/images/bg.jpg',
+    activityDetail:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log("options",options);
+    if(!options.id){
+      wx.showToast({
+        title:"参数错误id"
+      });
+      return;
+    }
+   
+    requestServerData('/Programlive/GetLiveDetail?id='+options.id).then((res)=>{
+      console.log("res",res);
+      if(res.code==200){
+        this.setData({
+          // activityDetail:res.result,
+          qjSrc:res.result.floatimg,
+          hzSrc:res.result.backimg,
+        });
+        this.setData({
+          activityDetail:res.result,
+        })
+      }else{
+
+      }
+      // if()
+    }).catch(err=>{
+      wx.hideLoading();
+    })
     var that = this;
     wx.getSystemInfo({
       success: function (res) {

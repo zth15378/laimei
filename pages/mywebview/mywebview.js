@@ -1,25 +1,23 @@
-// pages/content/index.js
+// pages/webView/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    url:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-
-  onTabItemTap(item) {
-      // console.log(item)
-      // if(item.index==1){
-      //   wx.redirectTo({
-      //     url: '../live/index',
-      //   })
-      // }
+  onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      url: options.url
+    })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -66,6 +64,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/homePage/homePage'
+    }
   }
 })

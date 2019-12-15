@@ -1,4 +1,6 @@
 <!--pages/live/index.wxml-->
-<view>
-    <button bindtap="handlerUpload">点击上传我的照片</button>
+<view class="developing">
+   <!--  <button bindtap="handlerUpload">点击上传我的照片</button> -->
+   正在开发中...
 </view>
+

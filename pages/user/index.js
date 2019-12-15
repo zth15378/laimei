@@ -6,28 +6,28 @@ Page({
       userInfo:{}
   },
   onLoad() {
-    requestServerData('Login/LoginSub','POST',{
-      code:app.globalData.code
-    })
-    .then( res =>{
-      app.globalData.token=res.result.token;
-      console.log(res.result.user)
-      if (res.result.user==''){
-        this.setData({
-          showLogin:true
-        })
-      }else{
-        this.setData({
-          userInfo:res.result.user
-        })
-      }
-    })
-    .catch( res =>{
-      wx.showToast({
-        title: res.message,
-        icon:'none'
-      })
-    })
+    // requestServerData('Login/LoginSub','POST',{
+    //   code:app.globalData.code
+    // })
+    // .then( res =>{
+    //   app.globalData.token=res.result.token;
+    //   console.log(res.result.user)
+    //   if (res.result.user==''){
+    //     this.setData({
+    //       showLogin:true
+    //     })
+    //   }else{
+    //     this.setData({
+    //       userInfo:res.result.user
+    //     })
+    //   }
+    // })
+    // .catch( res =>{
+    //   wx.showToast({
+    //     title: res.message,
+    //     icon:'none'
+    //   })
+    // })
   },
   // 获取用户信息
   bindGetUserInfo() {
@@ -55,32 +55,32 @@ Page({
   },
   //更新资料
   handlerUpdate() {
-    requestServerData('Login/LoginSub', 'POST', {
-      code: app.globalData.code
-    })
-      .then(res => {
-        app.globalData.token = res.result.token;
-        console.log(res.result.user)
-        if (res.result.user == '') {
-          this.setData({
-            showLogin: true
-          })
-        } else {
-          wx.showToast({
-            title: '更新成功',
-            icon:'none'
-          })
-          this.setData({
-            userInfo: res.result.user
-          })
-        }
-      })
-      .catch(res => {
-        wx.showToast({
-          title: res.message,
-          icon: 'none'
-        })
-      })
+    // requestServerData('Login/LoginSub', 'POST', {
+    //   code: app.globalData.code
+    // })
+    //   .then(res => {
+    //     app.globalData.token = res.result.token;
+    //     console.log(res.result.user)
+    //     if (res.result.user == '') {
+    //       this.setData({
+    //         showLogin: true
+    //       })
+    //     } else {
+    //       wx.showToast({
+    //         title: '更新成功',
+    //         icon:'none'
+    //       })
+    //       this.setData({
+    //         userInfo: res.result.user
+    //       })
+    //     }
+    //   })
+    //   .catch(res => {
+    //     wx.showToast({
+    //       title: res.message,
+    //       icon: 'none'
+    //     })
+    //   })
   },
   onShareAppMessage: function () {
 

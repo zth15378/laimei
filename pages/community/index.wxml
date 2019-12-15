@@ -1,2 +1,5 @@
 <!--pages/community/index.wxml-->
-<text>pages/community/index.wxml</text>
+<!-- <text>pages/community/index.wxml</text> -->
+<view class="developing">
+正在开发中...
+</view>

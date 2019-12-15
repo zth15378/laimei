@@ -1,12 +1,12 @@
 <!--pages/photo/photo.wxml-->
-<view class="doc">
+<view class="doc" wx:if="{{activityDetail}}">
   <view class="wrap">
     <view class="item" wx:if="{{itemIndex == 1}}">
-      <image class="bg" src="https://xcx.lesmills.com.cn/images/photo/bg.jpg"></image>
+      <image class="bg" src="{{hzSrc}}"></image>
       <view class="photoCut">
         <image class="userPhoto" src="{{src}}" style="width:{{photoW}}rpx; height:{{photoH}}rpx; position: absolute; transform:scale({{photoScale}}); top:{{photoTop}}rpx; left:{{photoLeft}}rpx;"></image>
       </view>
-      <image class="qj" src="https://xcx.lesmills.com.cn/images/photo/qj.png"></image>
+      <image class="qj" src="{{qjSrc}}"></image>
       <image class="sc" wx:if="{{isSc}}" bindtap="getPhoto" src="https://xcx.lesmills.com.cn/images/photo/postTip.png"></image>
       <image class="photoK" wx:if="{{!isSc}}" src="https://xcx.lesmills.com.cn/images/photo/photoTip.png"></image>
       <image class="reBtn" wx:if="{{!isSc}}" bindtap="photoRe" src="https://xcx.lesmills.com.cn/images/photo/reBtn.png"></image>
@@ -14,11 +14,11 @@
       <view class="photoCutView" bindtouchstart="photoStart" bindtouchmove="photoMove" bindtouchend="photoEnd"></view>
     </view>
     <view class="item" wx:if="{{itemIndex == 2}}">
-      <image class="bg" src="https://xcx.lesmills.com.cn/images/photo/bg.jpg"></image>
+      <image class="bg" src="{{hzSrc}}"></image>
       <view class="photoCut">
         <image class="userPhoto" src="{{src}}" style="width:{{photoW}}rpx;height:{{photoH}}rpx; position: absolute; transform:scale({{photoScale}}); top:{{photoTop}}rpx; left:{{photoLeft}}rpx;"></image>
       </view>
-      <image class="qj" src="https://xcx.lesmills.com.cn/images/photo/qj.png"></image>
+      <image class="qj" src="{{qjSrc}}"></image>
       <image class="speak" src="https://xcx.lesmills.com.cn/images/photo/speak.png"></image>
       <input class="word" bindinput="photoWord" maxlength="8"></input>
       <image class="last" bindtap="photoLast" src="https://xcx.lesmills.com.cn/images/photo/last.png"></image>
@@ -34,5 +34,9 @@
       <image class="again" bindtap="photoAgain" src="https://xcx.lesmills.com.cn/images/photo/again.png"></image>
     </view>
   </view>
-  
 </view>
+<view  wx:else>
+
+</view>
+
+

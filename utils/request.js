@@ -3,23 +3,30 @@ let platfrom = wx.getSystemInfoSync();
 //if (platfrom.platfrom =='devtools') {
  let host ='https://h5.rup-china.com/laymay/public/index.php/api/';
 //}
-const app=getApp();
-console.log(app.globalData.token)
-module.exports.requestServerData = function (url, method, data) {
+module.exports.requestServerData = function (url, method, data={},loadingRes) {
   return new Promise(function (resolve, reject) {
+    if(loadingRes){
+       wx.showLoading({
+        mask:true,
+        title:loadingRes.msg||"加载中..."
+      });
+    }
+    var token = wx.getStorageSync('token');
     wx.request({
       url: host + url,
       data: data,
       header: {
         'Content-Type': 'application/json',
-        'token':app.globalData.token
+        'token':token
       },
       method: method,
       success: function (res) {
         resolve(res.data)
+        wx.hideLoading()
       },
       fail: function (res) {
         reject(res.data)
+        wx.hideLoading()
       }
     })
   })

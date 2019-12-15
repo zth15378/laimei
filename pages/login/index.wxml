@@ -1,46 +1,79 @@
 
 <view class="login">
-    <view class="login-banner"></view>
+
+    <image
+    class="login-banner"
+     src="http://static.boycodes.cn/laimei-images/icons/register_pic1.jpg"/>
     <view class="login-from">
       <view class="from-item">
-        <view class="item-icon"></view>
+        <view class="item-icon">
+          <image  
+           src="http://static.boycodes.cn/laimei-images/icons/icon9.png"/>
+        </view>
         <view class="item-name">手机号</view>
          <view class="item-xing">*</view>
         <view class="mobile-input">
-          <input placeholder="请输入手机号" bindinput="mobile" maxlength="11"></input>
+          <input placeholder="请输入手机号" 
+           type="phone"
+          bindinput="mobile" maxlength="11"></input>
         </view>
       </view>
         <view class="from-item">
-        <view class="item-icon"></view>
+        <view class="item-icon">
+          <image  
+          style="height:24rpx;"
+           src="http://static.boycodes.cn/laimei-images/icons/icon10.png"/>
+        </view>
         <view class="item-name">校验码</view>
         <view class="item-xing">*</view>
         <view class="code-input">
-          <input placeholder="请输入校验码" bindinput="verification"></input>
+          <input placeholder="请输入校验码" 
+           type="number"
+          bindinput="verification"></input>
         </view>
         <view class="verification" bindtap="handlerVerfic">{{verificationCode}}
         </view>
       </view>
        <view class="from-item">
-        <view class="item-icon"></view>
+        <view class="item-icon">
+            <image  
+          style="height:24rpx;"
+           src="http://static.boycodes.cn/laimei-images/icons/icon12.png"/>
+        </view>
         <view class="item-name">验证码</view>
         <view class="item-xing">*</view>
         <view class="code-input">
-          <input placeholder="请输入验证码" bindinput="codeinput"></input>
+          <input placeholder="请输入验证码"
+          type="number"
+           bindinput="codeinput"></input>
         </view>
         <view class="code-send {{sendyzm==true?'sendactive':''}}" bindtap="handerCode">{{message}}
         </view>
       </view>
-      <view class="from-item">
-        <view class="item-icon"></view>
+     <!--  <view class="from-item">
+        <view class="item-icon">
+             <image  
+          style="height:24rpx;"
+           src="http://static.boycodes.cn/laimei-images/icons/icon12.png"/>
+        </view>
         <view class="item-name"> <text space="nbsp">密  码</text></view>
          <view class="item-xing">*</view>
         <view class="mobile-input">
           <input placeholder="请输入密码" bindinput="password" maxlength="11"></input>
         </view>
-      </view>
+      </view> -->
     </view>
     <view class="login-secret" bindtap="handlreSecret">
-    <view class="secret-cir {{secret==true?'secretactive':''}}"></view>隐私政策
+    <!-- <view class="secret-cir {{secret==true?'secretactive':''}}"></view> -->
+    <image 
+    wx:if="{{!secret}}"
+    class="secret-cir" 
+    src="http://static.boycodes.cn/laimei-images/icons/check.png"/>
+    <image 
+     wx:if="{{secret}}"
+    class="secret-cir" 
+    src="http://static.boycodes.cn/laimei-images/icons/checked.png"/>
+    隐私政策
     </view>
     <view class="login-register {{secret==true?'registeractive':''}}" bindtap="handlerRegister">
     注册

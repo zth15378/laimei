@@ -14,15 +14,36 @@ Page({
     showerror:false
   },
   onLoad: function (options) {
-    console.log(app.globalData)
+    console.log("app.globalData",app.globalData)
       //获取检验码
-    requestServerData('Login/getYzm','GET',{
-    }).then( res =>{
-      console.log(res)
-      this.setData({
-        verificationCode:res.result.code
+    if(!app.globalData.token){
+      wx.login({
+        success:  (res) => {
+          app.globalData.code=res.code;
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          requestServerData('/Login/LoginSub','post',{
+            code:res.code,
+          }).then((loginres)=>{
+            // console.log(loginres);
+            app.globalData.token=loginres.result.token;
+            app.globalData.userInfo = loginres.result.user;
+            this.getYzm();
+          });
+        }
       })
-    })
+    }else{
+      this.getYzm();
+    }
+  },
+  getYzm(){
+    console.warn("getYzmgetYzmgetYzm");
+      requestServerData('Login/getYzm','GET',{
+      }).then( res =>{
+        console.log("getYzm",res)
+        this.setData({
+          verificationCode:res.result.code
+        })
+      })
   },
   //刷新检验码
   handlerVerfic() {
@@ -82,6 +103,9 @@ Page({
       return;
     }
     if (!this.data.sendyzm){
+      this.setData({
+        sendyzm:true
+      })
       requestServerData('Login/getMobileCode', 'POST', {
         code:this.data.verification,
         mobile:this.data.mobile
@@ -93,14 +117,15 @@ Page({
             icon:'none'
           })
           let time = 60, _self = this;
-          let timer = setInterval(() => {
+          clearInterval(this.timer);
+          this.timer = setInterval(() => {
             time--;
             if (time < 1) {
               _self.setData({
                 message: '获取验证码',
                 sendyzm: false
               })
-              clearInterval(timer);
+              clearInterval(this.timer);
             } else {
               _self.setData({
                 message: time + 's重发',
@@ -116,6 +141,10 @@ Page({
           })
         }
        
+      }).catch(err=>{
+        this.setData({
+          sendyzm:false,
+        })
       })
     
      
@@ -164,14 +193,14 @@ Page({
             })
             return;
           }
-          if (this.data.password == '') { 
-            this.setData({
-              codemessage: '请输入密码',
-              showerror: true
-            })
-            return;
-          }
-          console.log(app.globalData)
+          // if (this.data.password == '') { 
+          //   this.setData({
+          //     codemessage: '请输入密码',
+          //     showerror: true
+          //   })
+          //   return;
+          // }
+          // console.log(app.globalData)
           requestServerData('Login/register', 'POST', {
             mobile: this.data.mobile,
             mobileCode: this.data.codeinput,
@@ -182,13 +211,18 @@ Page({
           }).then(res => {
             console.log(res)
             if(res.code == 200) {
-              wx.showToast({
-                title: '注册成功',
-                icon: 'none'
+              wx.navigateBack({
+                success:()=>{
+                  wx.showToast({
+                    title: '注册成功',
+                    icon: 'none'
+                  })
+                }
               })
-              wx.switchTab({
-                url: 'pages/user/index',
-              })
+              // wx.switchTab({
+              //   url: '../user/index',
+              // });
+              app.globalData.userInfo = res.result;
             }else{
               wx.showToast({
                 title: res.message,

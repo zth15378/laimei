@@ -1,2 +1,5 @@
 <!--pages/content/index.wxml-->
-<text>pages/content/index.wxml</text>
+
+<view class="developing">
+正在开发中...
+</view>

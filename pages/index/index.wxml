@@ -1,8 +1,9 @@
 <view class="home">
   <view class="home-header">
     <view class="home-city">
-    <image src="http://static.boycodes.cn/laimei-images/place.png"></image>
-    上海</view>
+      <image src="http://static.boycodes.cn/laimei-images/place.png"></image>
+      {{addressComponent.city}}
+    </view>
     <view class="home-search"><input class="home-input"  placeholder="搜索关键字"/></view>
   </view>
   <view class="homebanner">
@@ -16,13 +17,19 @@
       </swiper>
   
   <view class="home-navbar">
-      <view class="navbar-item">
-        <view class="navbar-img">
-          <image src="http://static.boycodes.cn/laimei-images/activity.png"></image>
+      <view class="navbar-item" wx:for="{{home_nav_list}}" bindtap="pressHomeNavItem" 
+      data-index="{{index}}" data-item="{{item}}"  wx:key="{{index}}">
+        <view 
+        class="navbar-img">
+          <image src="{{item.icon}}"></image>
         </view>
-        <view class="navbar-name">活动</view>
+        <view 
+        class="navbar-name">
+        {{item.name}}
+        </view>
       </view>
-           <view class="navbar-item">
+      <!-- 
+      <view class="navbar-item">
        <view class="navbar-img">
         <image src="http://static.boycodes.cn/laimei-images/photo.png"></image>
         </view>
@@ -45,7 +52,7 @@
         <image src="http://static.boycodes.cn/laimei-images/website.png"></image>
         </view>
         <view class="navbar-name">官网</view>
-      </view>
+      </view> -->
   </view>
   </view>
   <view class="subbanner">
