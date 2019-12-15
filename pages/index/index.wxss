@@ -1,0 +1,175 @@
+.home{
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+/* 头部 */
+.home-header{
+  display: flex;
+  padding:20rpx 24rpx;
+  background: #fff;
+}
+.home-city{
+  flex: 0 0 112rpx; 
+  display: flex;
+  width: 112rpx;
+  height: 54rpx;
+  margin-right: 18rpx;
+  background: rgba(245,179,3,0.2);
+  border-radius: 27rpx;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+  line-height: 54rpx;
+}
+.home-city image{
+  width: 22rpx;
+  height: 26rpx;
+  margin: 15rpx 0 0 18rpx;
+}
+.home-search{
+  flex: 1;
+  padding-left: 16rpx;
+  height: 54rpx;
+  background: #f1f1f1;
+  border-radius: 30rpx;
+}
+.home-search input{
+  width: 100%;
+  height: 54rpx;
+  font-size: 24rpx; 
+}
+/* banner */
+.homebanner,.swiper-itemimg image{
+  position: relative;
+  width: 100%;
+  height: 520rpx;
+}
+.wx-swiper-dots{
+  position:relative;
+  left: unset!important;
+  right: 0;
+  }
+.wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 148rpx;
+}
+/* 导航栏 */
+.home-navbar{
+  position: absolute;
+  bottom: -70rpx;
+  left: 0;
+  width: calc(100% - 20rpx);
+  margin-left: 10rpx;
+  display: flex;
+}
+.navbar-item{
+  flex: 1;
+  padding: 45rpx 0 39rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}
+.navbar-img,.navbar-img image{
+  width: 54rpx;
+  height: 54rpx;
+  margin: 0 auto;
+}
+.navbar-name{
+  margin-top: 34rpx;
+}
+/* 二级banner内容 */
+.subbanner{
+  margin: 101rpx 0 31rpx;
+  padding: 0 10rpx;
+}
+.subbanner image{
+  width: 100%;
+  height: 140rpx;
+  border-radius: 70rpx;
+  object-fit: cover;
+}
+/* 精彩内容 */
+.home-wonderful{
+  padding: 0 10rpx 55rpx;
+  overflow: hidden;
+}
+.wonderful-title{
+  position: relative;
+  width: 100%;
+  height: 103rpx;
+  background: #fff;
+}
+.wonderful-name{
+  position: absolute;
+  bottom: 30rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  z-index: 2;
+}
+.wonderful-line{
+  position: absolute;
+  bottom: 37rpx;
+  left: 50%;
+  width: 240rpx;
+  height: 6rpx;
+  margin-left: -120rpx;
+  background: #FFC425;
+}
+.wonderful-more{
+  position: absolute;
+  bottom: 36rpx;
+  right: 40rpx;
+  font-size: 24rpx;
+  color: #333;
+  font-weight: normal;
+}
+/* 精彩内容详情 */
+.wonderful-content{
+  padding:0 0 40rpx 20rpx;
+ overflow-x: scroll;
+  background: #fff;
+}
+.content-wrapper{
+  overflow-x: scroll;
+}
+.content-item{
+  width: 323rpx;
+  margin-right: 11rpx;
+  float: left;
+}
+.content-item:last-child{
+  margin-right: 0;
+}
+.content-image,.content-image image{
+  width: 323rpx;
+  height: 193rpx;
+}
+.content-name{
+  margin: 13rpx 0 10rpx;
+  font-size: 30rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:normal;
+}
+.content-time{
+  font-size: 22rpx;
+  color: #999;
+}
+.content-desc{
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #666;
+  line-height: 34rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

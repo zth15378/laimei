@@ -1,0 +1,54 @@
+{
+  "pages": [
+      "pages/upload/index",
+      "pages/live/index",
+    "pages/index/index",
+    "pages/content/index",
+    "pages/community/index",
+    "pages/user/index",
+    "pages/login/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "莱美爱好者",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor":"#784897",
+    "color":"#666666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"./public/images/home2.png",
+        "selectedIconPath":"./public/images/home.png"
+      },
+      {
+        "pagePath": "pages/content/index",
+        "text": "内容",
+        "iconPath": "./public/images/content2.png",
+        "selectedIconPath": "./public/images/content.png"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "社区",
+        "iconPath": "./public/images/community2.png",
+        "selectedIconPath": "./public/images/community.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "./public/images/my2.png",
+        "selectedIconPath": "./public/images/my.png"
+      }
+    ]
+  },
+  "permission":{
+      "scope.userLocation":{
+        "desc":"请点击确定"
+      }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

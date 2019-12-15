@@ -1,0 +1,129 @@
+<!--pages/user/index.wxml-->
+<view class="user">
+      <view wx:if="{{showLogin}}">
+        <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+      </view>
+      <view wx:else>
+          <view class="images-avatar">
+            <image src="{{userInfo.headimgurl}}"></image>
+          </view>
+          <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            手机号 <text>*</text>
+            <view class="item-tips">(不可修改)</view>
+            </view>
+            <view class="item-content">
+            {{userInfo.mobile}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            邮箱
+            </view>
+            <view class="item-content">
+            {{userInfo.email}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            邮箱验证码
+            <view class="item-tips"> <text>*</text>莱美认证教练请输入</view>
+            </view>
+            <view class="item-content">
+            {{userInfo.email}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            性别
+            </view>
+            <view class="item-content">
+            <view wx:if="{{userInfo.sex==1}}">男</view>
+            <view wx:elif="{{userInfo.sex==2}}">女</view>
+            <view wx:else>未知</view>
+            </view>
+          </view>
+            <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            中文名
+            </view>
+             <view class="item-content">
+           {{userInfo.zh_name}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            英文名
+            </view>
+             <view class="item-content">
+           {{userInfo.en_name}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            昵称
+            </view>
+             <view class="item-content">
+           {{userInfo.nickname}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+            国家
+            </view>
+             <view class="item-content">
+           {{userInfo.country}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+          省份
+            </view>
+             <view class="item-content">
+           {{userInfo.province}}
+            </view>
+          </view>
+           <view class="userinfo-item">
+            <view class="item-icon">
+              <image src=""></image>
+            </view>
+            <view class="item-name">
+          会员类型
+            </view>
+             <view class="item-content">
+           <view wx:if="userInfo.memberType==1">莱美认证教练</view>
+           <view wx:elif="userInfo.memberType==2">爱好者</view>
+            </view>
+          </view>
+          <view class="user-update" bindtap="handlerUpdate">
+           更新
+          </view>
+      </view>
+</view>

@@ -1,0 +1,113 @@
+/* pages/login/index.wxss */
+.login-banner{
+  width: 100%;
+  height: 443rpx;
+  background: #f2516f;
+}
+ /*表单内容样式* */
+.from-item{
+padding:0 66rpx 64rpx 63rpx;
+display: flex;
+font-size: 32rpx;
+color: #999;
+}
+.item-icon{
+  flex:0 0 21rpx;
+  width: 21rpx;
+  margin-right: 17rpx;
+}
+.item-icon image{
+  width: 21rpx;
+}
+.item-name{
+  margin-top: 6rpx;
+}
+.item-xing{
+  flex:  0 0 55rpx;
+  width: 55rpx;
+  margin-top: 17rpx;
+  font-size: 28rpx;
+  color: #784897;
+  text-indent: 13rpx;
+}
+.mobile-input{
+  flex: 1;
+}
+input{
+  width: 100%;
+  padding-left: 21rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #ddd;
+}
+/* 验证码 */
+.code-input{
+  flex: 1;
+margin-right: 38rpx;
+}
+.code-send{
+  flex: 0 0 150rpx;
+  width: 150rpx;
+  height: 44rpx;
+  background:#000;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  color: #fff;
+  line-height: 44rpx;
+  text-align: center;
+}
+.sendactive{
+  background: rgba(0, 0, 0, .5);
+}
+.verification{
+    width: 150rpx;
+  height: 44rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  color: #784897;
+  line-height: 42rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 隐私协议 */
+.login-secret{
+padding:18rpx 66rpx 31rpx 63rpx;
+display: flex;
+font-size: 26rpx;
+color: #784897;
+}
+.secret-cir{
+  flex: 0 0 25rpx;
+  width: 25rpx;
+  height: 25rpx;
+  margin:8rpx 16rpx 0 0;
+  border: 2rpx solid #784897;
+  border-radius: 25rpx;
+  text-align: center;
+  line-height: 25rpx;
+}
+.secretactive{
+  background: #784897;
+}
+.login-register{
+  width: 690rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, .5);
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 90rpx;
+  border-radius: 6rpx;
+}
+.registeractive{
+  background: #000000;
+}
+.login-error{
+  margin: 50rpx 0 246rpx 0;
+  font-size: 28rpx;
+  color: #AF1316;
+  text-align: center;
+}

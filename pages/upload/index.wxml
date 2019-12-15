@@ -1,0 +1,7 @@
+<view>
+  <button bindtap="handlerUpload">点击上传你的半身像</button>
+  <view class="live-images">
+  <image src="{{uploadImage}}" wx:for="{{uploadImage}}" wx:key="index"></image>
+  </view>
+
+</view>
