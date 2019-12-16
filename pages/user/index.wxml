@@ -4,7 +4,9 @@
         <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
       </view>
       <view wx:else>
-          <view class="images-avatar">
+          <view 
+          style="background-image:url('http://static.boycodes.cn/laimei-images/icons/register_pic1.jpg');background-size:cover"
+          class="images-avatar">
             <image src="{{userInfo.headimgurl}}"></image>
           </view>
           <view class="userinfo-item">
