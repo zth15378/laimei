@@ -28,7 +28,7 @@ Page({
     word: '',
     showCanvas: false,
     saveImg: '',
-    qjSrc: '',
+    qjSrc: '../../public/images/aa.png',
     hzSrc: '',
     activityDetail:null,
   },
@@ -50,7 +50,6 @@ Page({
       if(res.code==200){
         this.setData({
           // activityDetail:res.result,
-          qjSrc:res.result.floatimg,
           hzSrc:res.result.backimg,
         });
         this.setData({
@@ -306,7 +305,8 @@ Page({
    */
   photoLast: function () {
     this.setData({
-      itemIndex: 1
+      itemIndex: 1,
+      isSc:true
     })
   },
 
@@ -342,8 +342,8 @@ Page({
         c_h_ = parseInt(this.data.photoH),
         q_w = 750,
         q_h = 1483,
-        t_x = 58,
-        t_y = 982,
+        t_x = 66,
+        t_y = 1105,
         c_x, c_y, c_x_, c_y_;
       if (this.data.photoLeft > 0) {
         c_x_ = that.data.photoLeft;
@@ -363,9 +363,9 @@ Page({
       ctx.drawImage(that.data.hzSrc, 0, 0, q_w, q_h);
       ctx.drawImage(that.data.src, c_x, c_y, c_w, c_h, c_x_, c_y_, c_w_, c_h_);
       ctx.drawImage(that.data.qjSrc, 0, 0, q_w, q_h);
-      ctx.setFontSize(32);
+      ctx.setFontSize(60);
       ctx.setFillStyle('#ffffff')
-      ctx.fillText('"' + that.data.word + '"', t_x, t_y)
+      ctx.fillText(that.data.word, t_x, t_y)
       ctx.draw(false, setTimeout(function () {
         console.log('draw')
         wx.canvasToTempFilePath({

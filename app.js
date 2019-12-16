@@ -22,7 +22,7 @@ App({
               that.globalData.iv =res.iv
               that.globalData.encryptedData=res.encryptedData
               that.globalData.rawData = res.rawData;
-              console.log(res)
+              console.log(that.globalData)
             }
           });
           if (that.userInfoReadyCallback) {
