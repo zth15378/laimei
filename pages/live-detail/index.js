@@ -28,8 +28,8 @@ Page({
     word: '',
     showCanvas: false,
     saveImg: '',
-    qjSrc: '../../public/images/endQj.png',
-    hzSrc: '../../public/images/bg.jpg',
+    qjSrc: '',
+    hzSrc: '',
     activityDetail:null,
   },
 
@@ -364,7 +364,7 @@ Page({
       ctx.drawImage(that.data.src, c_x, c_y, c_w, c_h, c_x_, c_y_, c_w_, c_h_);
       ctx.drawImage(that.data.qjSrc, 0, 0, q_w, q_h);
       ctx.setFontSize(32);
-      ctx.setFillStyle('#000000')
+      ctx.setFillStyle('#ffffff')
       ctx.fillText('"' + that.data.word + '"', t_x, t_y)
       ctx.draw(false, setTimeout(function () {
         console.log('draw')
@@ -428,8 +428,7 @@ Page({
       pic_scale: 1,
       word: '',
       showCanvas: false,
-      saveImg: '',
-      qjSrc: '../images/photo/endQj.png'
+      saveImg: ''
     })
   },
 

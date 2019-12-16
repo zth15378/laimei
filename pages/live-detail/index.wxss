@@ -21,8 +21,8 @@
   overflow: hidden;
 }
 .qj{
-  width: 750rpx;
-  height: 1483rpx;
+  width: 100%;
+  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -52,6 +52,12 @@
 .reBtn{
   width: 324rpx;
   height: 86rpx;
+  background: #0F0F0F;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 86rpx;
   position: absolute;
   top: 1004rpx;
   left: 41rpx;
@@ -60,6 +66,12 @@
 .next{
   width: 324rpx;
   height: 86rpx;
+  background: #0F0F0F;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 86rpx;
   position: absolute;
   top: 1004rpx;
   left: 385rpx;
@@ -77,7 +89,7 @@
   width: 671rpx;
   height: 113rpx;
   position: absolute;
-  top: 867rpx;
+  top: 840rpx;
   left: 39rpx;
   z-index: 10;
 }
@@ -85,13 +97,19 @@
   width:650rpx;
   height: 60rpx;
   position: absolute;
-  top: 914rpx;
+  top: 884rpx;
   left: 49rpx;
   z-index: 10;
 }
 .last{
   width: 324rpx;
   height: 86rpx;
+   background: #0F0F0F;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 86rpx;
   position: absolute;
   top: 1004rpx;
   left: 41rpx;
@@ -100,6 +118,12 @@
 .end{
   width: 324rpx;
   height: 86rpx;
+   background: #0F0F0F;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 86rpx;
   position: absolute;
   top: 1004rpx;
   left: 385rpx;
@@ -112,28 +136,23 @@
   z-index: 10;
 }
 .saveImgWrap{
-width: 750rpx;
-height: 1483rpx;
+width: 468rpx;
+height: 812rpx;
 position: absolute;
-top: 0;
-left: 0;
+top: 30rpx;
+left: 50%;
+margin-left: -234rpx;
 z-index: 10;
-transform-origin: 50% 5%;
-transform: scale(0.7);
 }
 .saveImg{
-width: 750rpx;
-height: 1483rpx;
-position: absolute;
-top: 0;
-left: 0;
-z-index: 10;
+width: 468rpx;
+height: 812rpx;
 }
 .longTip{
   width: 329rpx;
   height: 28rpx;
   position: absolute;
-  top: 1075rpx;
+  top: 882rpx;
   left: 210rpx;
   z-index: 10;
   animation: opaAni 1s linear infinite
@@ -141,12 +160,39 @@ z-index: 10;
 .again{
   width: 690rpx;
   height: 86rpx;
+  background: #0F0F0F;
+  font-size: 32rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 86rpx;
   position: absolute;
-  top: 1120rpx;
+  top:938rpx;
   left: 30rpx;
   z-index: 10;
 }
-
+.upload-img{
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  z-index: 10;
+}
+.upload-bac{
+  position: absolute;
+  font-size: 36rpx;
+  color: #fff;
+  border: 5rpx dashed #fff;
+  border-radius: 6rpx;
+}
+.upload-bac image{
+  position: absolute;
+  width: 261rpx;
+  height: 274rpx;
+}
 @keyframes opaAni{
   0%{opacity: 1}
   50%{opacity: 0.5}
