@@ -6,6 +6,11 @@ Page({
       userInfo:{}
   },
   onLoad() {
+    if(app.globalData.userInfo){
+      this.setData({
+        userInfo:app.globalData.userInfo
+      })
+    }
     // requestServerData('Login/LoginSub','POST',{
     //   code:app.globalData.code
     // })
