@@ -6,33 +6,33 @@ Page({
       userInfo:{}
   },
   onLoad() {
-    if(app.globalData.userInfo){
-      this.setData({
-        userInfo:app.globalData.userInfo
-      })
-    }
-    // requestServerData('Login/LoginSub','POST',{
-    //   code:app.globalData.code
-    // })
-    // .then( res =>{
-    //   app.globalData.token=res.result.token;
-    //   console.log(res.result.user)
-    //   if (res.result.user==''){
-    //     this.setData({
-    //       showLogin:true
-    //     })
-    //   }else{
-    //     this.setData({
-    //       userInfo:res.result.user
-    //     })
-    //   }
-    // })
-    // .catch( res =>{
-    //   wx.showToast({
-    //     title: res.message,
-    //     icon:'none'
+    // if(app.globalData.userInfo){
+    //   this.setData({
+    //     userInfo:app.globalData.userInfo
     //   })
-    // })
+    // }
+    requestServerData('Login/LoginSub','POST',{
+      code:app.globalData.code
+    })
+    .then( res =>{
+      app.globalData.token=res.result.token;
+      console.log(res.result.user)
+      if (res.result.user==''){
+        wx.redirectTo({
+          url: '../login/index',
+        })
+      }else{
+        this.setData({
+          userInfo:res.result.user
+        })
+      }
+    })
+    .catch( res =>{
+      wx.showToast({
+        title: res.message,
+        icon:'none'
+      })
+    })
   },
   // 获取用户信息
   bindGetUserInfo() {

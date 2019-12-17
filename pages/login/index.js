@@ -193,14 +193,7 @@ Page({
             })
             return;
           }
-          // if (this.data.password == '') { 
-          //   this.setData({
-          //     codemessage: '请输入密码',
-          //     showerror: true
-          //   })
-          //   return;
-          // }
-          // console.log(app.globalData)
+         
           requestServerData('Login/register', 'POST', {
             mobile: this.data.mobile,
             mobileCode: this.data.codeinput,
@@ -219,9 +212,9 @@ Page({
                   })
                 }
               })
-              // wx.switchTab({
-              //   url: '../user/index',
-              // });
+              wx.switchTab({
+                url: '../user/index',
+              });
               app.globalData.userInfo = res.result;
             }else{
               wx.showToast({

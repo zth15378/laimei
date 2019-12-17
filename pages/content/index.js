@@ -1,71 +1,71 @@
-// pages/content/index.js
+// pages/active/active.js
+import { requestServerData } from '../../utils/request.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tab: 2,
+    background:'',
+    subbanner:[],
+    vertical: false,
+    interval: 2000,
+    duration: 500,
+    billIndex: 0,
+    contenInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  onLoad: function (options) {
+    requestServerData('/Programlive/GetLiveDetail?id=16').then((res) => {
+      console.log("res", res);
+      if (res.code == 200) {
+        this.setData({
+          background: res.result.topimg,
+          subbanner:res.result.showimg,
+          contenInfo:res.result.blurb
+        });
+        
+      } else {
 
-  onTabItemTap(item) {
-      // console.log(item)
-      // if(item.index==1){
-      //   wx.redirectTo({
-      //     url: '../live/index',
-      //   })
-      // }
+      }
+      // if()
+    })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  liveVideo() {
+ wx.navigateTo({
+      url: '../live-detail/index?id=16',
+    })
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let that = this;
+    this.setData({
+      billIndex: 1
+    })
+    setTimeout(function () {
+      that.setData({
+        billIndex: 2
+      })
+    }, 600)
+    setTimeout(function () {
+      that.setData({
+        billIndex: 3
+      })
+    }, 1200)
+    setTimeout(function () {
+      that.setData({
+        billIndex: 4
+      })
+    }, 1800)
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

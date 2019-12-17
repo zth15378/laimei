@@ -1,5 +1,12 @@
-<!--pages/content/index.wxml-->
-
-<view class="developing">
-正在开发中...
+<!--pages/active/active.wxml-->
+<view class="doc">
+  <view class="wrap">
+    <image class="act-swi-img" src="{{background}}"></image>
+    <image class="bill{{index+1}}" wx:for="{{subbanner}}" wx:key="index" src="{{item}}"></image>
+  </view>
+  <view class="button">
+    <view class="button-text">{{contenInfo.left}}</view>
+    <view class="button-img" bindtap="liveVideo">+</view>
+    <view class="button-text">{{contenInfo.right}}</view>
+  </view>
 </view>

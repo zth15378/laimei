@@ -1,8 +1,8 @@
 {
   "pages": [
+        "pages/content/index",
     "pages/index/index",
     "pages/login/index",
-    "pages/content/index",
     "pages/community/index",
     "pages/user/index",
     "pages/live-detail/index",

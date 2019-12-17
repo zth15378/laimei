@@ -87,9 +87,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     wx.navigateTo({
-      url: '../live-detail/index?id=16',
-    })
+    //  wx.navigateTo({
+    //   url: '../live-detail/index?id=16',
+    // })
     //banner接口
     requestServerData('Index/getBanner','GET',{}).then( res =>{
       if(res.code==200) {
@@ -144,9 +144,9 @@ Page({
     if(item.type==1) {
         if(app.isLogin()){
           if(item.url=='live'){
-             wx.navigateTo({
-              url: '../live-detail/index?id='+item.parameid,
-            })
+              wx.navigateTo({
+                url: '../live-detail/index?id=16',
+              })
           }else{
             wx.showToast({
               title: "识别不到参数",

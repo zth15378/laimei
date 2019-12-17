@@ -7,8 +7,12 @@ App({
     // 展示本地存储
     var that=this;
      this.autoUpdate()
+    wx.login({
+      success: (res) => {
+          this.globalData.code=res.code;
+      }})
      user.login().then(function (loginres) {
-        console.log('app logined',loginres);
+       // console.log('app logined',loginres);
         if(loginres.token) {
           that.globalData.token = loginres.token;
           wx.getUserInfo({
@@ -22,7 +26,7 @@ App({
               that.globalData.iv =res.iv
               that.globalData.encryptedData=res.encryptedData
               that.globalData.rawData = res.rawData;
-              console.log(that.globalData)
+              //console.log(that.globalData)
             }
           });
           if (that.userInfoReadyCallback) {
